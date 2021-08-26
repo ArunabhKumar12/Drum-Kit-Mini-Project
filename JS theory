@@ -1,0 +1,100 @@
+document.querySelector("button").addEventListener("click", handleClick );
+This is sets up a function to be called whenever the specified event is delivered to the target
+1st param is the event type which we have to listen to
+2nd param is the listener which is usually a JS function thats goin to be called when the click event is detected
+Note(imp): if we add () while callimng the fucntion like handleClick() then the functionwould automatically be called without the completion of the event
+Note(imp): without using () , we are passing the function name as an input so that it can be called at a later(ie after completion of the event)
+
+function handleClick(){
+  alert("I got clicked");
+}
+
+Method 2 of the above procedure
+
+document.querySelector("button").addEventListener("click", function(){
+alert("I got clicked")
+});
+
+Here we are using an anonymous function which will be called and will be performing the given instructions after the completion of the given event
+These functions arem called higher order functions as they can take other functions as inputs
+
+var audio = new Audio("sounds/tom-1.mp3");
+audio.play();
+here audio is the var name
+By new Audio we are creating an HTML Audio Elem
+
+this
+this keyword is the identity of the button that triggered the EventListener
+
+For eg: so properties that can be used using the this keyword
+console.log(this);
+console.log(this.innerHTML);
+this.style.color="white";
+
+Syntax for adding audio as an event
+mySound = new Audio([URL String]);
+
+
+Topic : Javascript Objects
+For eg:
+var houseKeeper1 = {
+    name : "Jane",
+    age : "35 yrs",
+    yearsOfExperience : 12,
+    cleaningJobs:["Bathroom","Lobby","Bedroom"]
+}
+
+function BellBoy(name , age , hasWorkPermit , languages){
+    this.name = name;
+    this.age = age;
+    this.hasWorkPermit = hasWorkPermit;
+    this.languages = languages;
+}
+This is called a Constructor Function
+Note: The 1st letter of the 1st word of the name of the constructor function has to be a capital. It takes a number of inputs
+
+Initialising an Object of the given constructor function
+var bellBoy1 = new BellBoy("Timmy", 19 , true , ["French", "English"]);
+
+function Housekeeper(name , age , yearsOfExperience , cleaningJobs){
+    this.name = name;
+    this.age = age;
+    this.yearsOfExperience = yearsOfExperience;
+    this.cleaningJobs = cleaningJobs;
+
+}
+
+Initialising the object of the given constructor function
+var houseKeeper1 = new Housekeeper("Jane" , 35 , 12 , ["Bathroom" , "Kitchen" , "Bedroom" , "Lobby"]);
+
+Topic: Including methods in constructor functions
+For eg
+function Housekeeper(name , age , yearsOfExperience , cleaningJobs){
+    this.name = name;
+    this.age = age;
+    this.yearsOfExperience = yearsOfExperience;
+    this.cleaningJobs = cleaningJobs;
+    this.clean = function(){
+        alert("Cleaning in progress...");
+    }
+
+    Guessing the constructor function of HTML audio elem
+    For eg:
+    var tom1 = new Audio("sounds/tom-1.mp3");
+    tom1.play();
+
+    function Audio(fileLocation){
+    this.fileLocation = fileLocation;
+    Note: Audio is the name of the object that the function would construct
+    Note: fileLocation is the property
+    this.click = function(){
+        Tap into the audio hardware
+        Check the file at fileLocation exists
+        Check the file at fileLocation is a sound fileLocation
+        Play the file at fileLocation
+      }
+    }
+
+    Now initialising the object that will use the constructor fucntion audio
+    var tom1 = new Audio("sounds/tom-1.mp3");
+    tom.play();
